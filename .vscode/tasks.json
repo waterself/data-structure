@@ -1,0 +1,43 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{	
+			"type": "shell", 
+			"label": "g++build", 
+			"command": "C:\\MinGW\\bin\\g++.exe", 
+			"args": [
+				"-fdiagnostics-color=always",
+				"-std=c++11",
+				"-g", 
+				"${fileDirname}\\**.cpp",
+				"-o", 
+				"${fileDirname}\\${fileBasenameNoExtension}.exe" 
+			],
+			"options": {
+				"cwd": "${fileDirname}" 
+			},
+			"problemMatcher": [
+				"$gcc" 
+			],
+			"group": {
+				"kind": "build", 
+				"isDefault": true
+			},
+			"detail": "컴파일러: C:\\MinGW\\bin\\g++.exe"  
+			
+		},
+		{
+			"label": "execute", 
+			"command": "cmd", 
+			"group": "test", 
+			"args": [
+				//"/k",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				// "&",
+				// "pause",
+				// "&",
+				// "exit"
+			]
+		},
+	]
+}
